@@ -26,7 +26,7 @@ public class GraphicDisplay extends JFrame implements GridDisplay {
     }
 
     public void displayGrid(Grid grid) {
-        this.grid = grid;
+        GraphicDisplay.grid = grid;
         panel.repaint();
     }
 

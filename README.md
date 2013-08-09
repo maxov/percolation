@@ -1,1 +1,4 @@
-This file was created by IntelliJ IDEA 12.1.4 for binding GitHub repository
+# flayo.percolation
+
+### class diagram
+[class diagram](http://i.imgur.com/DZup5ky.png)
