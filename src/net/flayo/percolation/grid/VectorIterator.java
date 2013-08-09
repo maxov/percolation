@@ -10,22 +10,25 @@ public class VectorIterator implements Iterator<Vector> {
 
     public VectorIterator(Vector vector) {
         // Populate the vector list
-        for(int y = 0; y < vector.y; y++) {
-            for(int x = 0; x < vector.x; x++) {
+        for (int y = 0; y < vector.y; y++) {
+            for (int x = 0; x < vector.x; x++) {
                 list.addFirst(new Vector(x, y));
             }
         }
     }
 
-    @Override public boolean hasNext() {
+    @Override
+    public boolean hasNext() {
         return !list.isEmpty();
     }
 
-    @Override public Vector next() {
+    @Override
+    public Vector next() {
         return list.removeLast();
     }
 
-    @Override public void remove() {
+    @Override
+    public void remove() {
 
     }
 }

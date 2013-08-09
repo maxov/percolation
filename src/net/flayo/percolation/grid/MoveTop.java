@@ -8,12 +8,14 @@ public class MoveTop extends Move {
     }
 
     // Is this move valid?
-    @Override public boolean valid(Grid grid) {
+    @Override
+    public boolean valid(Grid grid) {
         return super.valid(grid) && start.y == 0;
     }
 
     // Is this move useful?
-    @Override public boolean useful(Grid grid) {
+    @Override
+    public boolean useful(Grid grid) {
         return grid.on(start);
     }
 

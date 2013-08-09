@@ -3,7 +3,6 @@ package net.flayo.percolation;
 import net.flayo.percolation.alg.Generator;
 import net.flayo.percolation.display.GraphicDisplay;
 import net.flayo.percolation.display.GridDisplay;
-import net.flayo.percolation.display.TextDisplay;
 import net.flayo.percolation.grid.Move;
 import net.flayo.percolation.grid.Vector;
 
@@ -14,10 +13,10 @@ import java.util.Iterator;
 // Bonus: Display this percentage, and its computation, in a meaningful way.
 public class Main {
 
-	public static void main(String[] args) {
-		GridDisplay display = new GraphicDisplay();
+    public static void main(String[] args) {
+        GridDisplay display = new GraphicDisplay();
 
-        for(int times = 0; times <= 20; times++) {
+        for (int times = 0; times <= 20; times++) {
             Generator gen = new Generator(new Vector(128, 128));
 
             boolean percolates = false;
@@ -26,16 +25,16 @@ public class Main {
 
             display.displayGrid(gen);
 
-            while(!percolates) {
+            while (!percolates) {
                 count++;
                 Vector addVector = gen.gen();
 
                 moves.addAll(gen.moves(addVector));
 
                 Iterator<Move> iter = moves.iterator();
-                while(iter.hasNext()) {
+                while (iter.hasNext()) {
                     Move move = iter.next();
-                    if(move.useful(gen)) {
+                    if (move.useful(gen)) {
                         move.apply(gen);
                         iter.remove();
                     }
@@ -55,5 +54,5 @@ public class Main {
                 e.printStackTrace();
             }
         }
-	}
+    }
 }

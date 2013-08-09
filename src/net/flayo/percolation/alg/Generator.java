@@ -20,7 +20,7 @@ public class Generator extends Grid {
             int x = rand.nextInt(size.x);
             int y = rand.nextInt(size.y);
             point = new Vector(x, y);
-        } while(on(point) || perc(point));
+        } while (on(point) || perc(point));
 
         set(point, Switch.ON);
         return point;

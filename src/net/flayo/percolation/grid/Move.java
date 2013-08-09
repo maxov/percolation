@@ -23,7 +23,7 @@ public class Move {
         moves.add(new Move(vector.add(new Vector(0, -1)), vector));
 
         // If this vector is at the top of the grid, it automatically percolates
-        if(vector.y == 0) {
+        if (vector.y == 0) {
             moves.add(new MoveTop(vector));
         }
 

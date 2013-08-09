@@ -32,7 +32,8 @@ public class Vector implements Iterable<Vector> {
     }
 
     // Iterate over all containing vectors
-    @Override public Iterator<Vector> iterator() {
+    @Override
+    public Iterator<Vector> iterator() {
         return new VectorIterator(this);
     }
 }
