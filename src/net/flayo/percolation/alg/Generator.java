@@ -1,28 +1,32 @@
 package net.flayo.percolation.alg;
 
-import net.flayo.percolation.grid.Grid;
-import net.flayo.percolation.grid.Switch;
-import net.flayo.percolation.grid.Vector;
+import net.flayo.percolation.grid.Lattice;
+import net.flayo.percolation.grid.Point;
+import net.flayo.percolation.grid.Site;
 
 import java.util.Random;
 
-public class Generator extends Grid {
+/*
+    A special kind of Lattice that is able to add on sites.
+ */
+public class Generator extends Lattice {
 
-    public Generator(Vector size) {
+    public Generator(Point size) {
         super(size);
     }
 
-    public Vector gen() {
+    // Add an on site, at random, on a point.
+    public Point gen() {
         Random rand = new Random();
-        Vector point;
+        Point point;
 
         do {
             int x = rand.nextInt(size.x);
             int y = rand.nextInt(size.y);
-            point = new Vector(x, y);
+            point = new Point(x, y);
         } while (on(point) || perc(point));
 
-        set(point, Switch.ON);
+        set(point, Site.ON);
         return point;
     }
 

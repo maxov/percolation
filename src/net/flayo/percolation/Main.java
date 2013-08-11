@@ -1,58 +1,87 @@
 package net.flayo.percolation;
 
 import net.flayo.percolation.alg.Generator;
-import net.flayo.percolation.display.GraphicDisplay;
-import net.flayo.percolation.display.GridDisplay;
-import net.flayo.percolation.grid.Move;
-import net.flayo.percolation.grid.Vector;
+import net.flayo.percolation.display.graphic.GraphicDisplay;
+import net.flayo.percolation.display.LatticeDisplay;
+import net.flayo.percolation.grid.move.Move;
+import net.flayo.percolation.grid.Point;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-// Problem: what percentage, on average, is needed for percolation to occur on a 48x48 grid?
-// Bonus: Display this percentage, and its computation, in a meaningful way.
+/*
+    Problem: Calculate the threshold of percolation on a square grid.
+    Solution: Use a monte-carlo algorithm to approximate the percolation threshold to a certain degree.
+    Accuracy: So far, Consistently +-0.01 of the best calculations for site percolation. A high-accuracy attempt(large
+        size, large iterations) has not been tried.
+*/
 public class Main {
 
-    public static void main(String[] args) {
-        GridDisplay display = new GraphicDisplay();
+    // Find the average of a list of doubles
+    private static double average(ArrayList<Double> list) {
+        double sum = 0;
 
+        for (double elem : list) {
+            sum += elem;
+        }
+
+        return sum / list.size();
+    }
+
+    // The main method(high-level algorithm stuff here)
+    public static void main(String[] args) {
+        // Initialize a lattice display(A text display can be used just as well)
+        LatticeDisplay display = new GraphicDisplay();
+        // The list of thresholds, used for averaging out
+        ArrayList<Double> thresholds = new ArrayList<Double>();
+
+        // Arbitrary number of times can be used
         for (int times = 0; times <= 20; times++) {
-            Generator gen = new Generator(new Vector(128, 128));
+            // A 128x128 grid is used, size generally doesn't matter
+            Generator gen = new Generator(new Point(128, 128));
 
             boolean percolates = false;
             int count = 0;
+            // Keep track of all moves
             ArrayList<Move> moves = new ArrayList<Move>();
 
-            display.displayGrid(gen);
+            display.displayLattice(gen);
 
             while (!percolates) {
                 count++;
-                Vector addVector = gen.gen();
 
-                moves.addAll(gen.moves(addVector));
+                // Generate a point, add moves
+                Point addPoint = gen.gen();
+                moves.addAll(gen.moves(addPoint));
 
+                // Apply possible moves
                 Iterator<Move> iter = moves.iterator();
                 while (iter.hasNext()) {
                     Move move = iter.next();
+
                     if (move.useful(gen)) {
                         move.apply(gen);
                         iter.remove();
                     }
                 }
 
+                // Check for percolation, display lattice
                 percolates = gen.percolates();
-                display.displayGrid(gen);
+                display.displayLattice(gen);
             }
 
+            // The threshold
+            double threshold = (double) count / gen.size.x / gen.size.y;
 
-            display.displayGrid(gen);
-            System.out.println((double) count / gen.size.x / gen.size.y);
+            // Display the lattice, add to the thresholds and show some stats
+            display.displayLattice(gen);
+            thresholds.add(threshold);
+            System.out.println(threshold + " threshold-so-far: " + average(thresholds));
 
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
         }
+
+        System.out.println("final-percolation-threshold: " + average(thresholds));
+
     }
+
 }
