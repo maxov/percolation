@@ -10,7 +10,7 @@ algorithm used is a simple Monte-Carlo algorithm that keeps track of possible pe
 are added on until the whole thing percolates.
 
 While no extensive, accurate calculations have been run, this project consistently gets +-0.01 of the best calculations
-done so far. (0.5930815197 compared to 0.5927462113, see
+done so far. (0.59308151 compared to 0.59274621, see
 ['Efficient Monte Carlo algorithm and high-precision results for percolation']
 (http://arxiv.org/pdf/cond-mat/0005264v2.pdf))
 
