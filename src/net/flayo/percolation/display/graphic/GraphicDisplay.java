@@ -11,7 +11,7 @@ import javax.swing.*;
 */
 public class GraphicDisplay extends JFrame implements LatticeDisplay {
 
-    private JPanel panel = new DisplayPanel();
+    private final JPanel panel = new DisplayPanel();
     // The lattice is stored statically for a DisplayPanel to use
     public static Lattice lattice = new Lattice(new Point(1, 1));
 

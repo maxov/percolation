@@ -9,7 +9,7 @@ public enum Site {
     PERC(2); // Can be percolating
 
     // Integer value of this site
-    public final int value;
+    private final int value;
 
     Site(int value) {
         this.value = value;

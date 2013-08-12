@@ -10,7 +10,7 @@ import java.util.LinkedList;
 public class PointIterator implements Iterator<Point> {
 
     // Stores an easy-access stack of points
-    private LinkedList<Point> list = new LinkedList<Point>();
+    private final LinkedList<Point> list = new LinkedList<Point>();
 
     public PointIterator(Point point) {
         // Populate the point list

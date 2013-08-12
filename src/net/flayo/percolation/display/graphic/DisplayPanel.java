@@ -9,7 +9,7 @@ import java.awt.*;
 /*
     The actual panel that displays a lattice ful of sites.
 */
-public class DisplayPanel extends JPanel {
+class DisplayPanel extends JPanel {
 
     // Colors used in the display
     private static final Color PERC_COLOR = new Color(19, 111, 77);

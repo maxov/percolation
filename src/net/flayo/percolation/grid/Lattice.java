@@ -10,12 +10,7 @@ import java.util.ArrayList;
 public class Lattice {
 
     public final Point size;
-    public final Site[][] data;
-
-    public Lattice(Site[][] grid) {
-        size = new Point(grid.length, grid[0].length);
-        data = grid;
-    }
+    private final Site[][] data;
 
     public Lattice(Point size) {
         this(new Site[size.x][size.y]);
@@ -23,6 +18,11 @@ public class Lattice {
         for (Point point : this.size) {
             set(point, Site.OFF);
         }
+    }
+
+    private Lattice(Site[][] grid) {
+        size = new Point(grid.length, grid[0].length);
+        data = grid;
     }
 
     /* Get/set a site using points */
