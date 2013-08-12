@@ -1,4 +1,4 @@
-package net.flayo.percolation.grid;
+package net.flayo.percolation.lattice;
 
 import java.util.Iterator;
 import java.util.LinkedList;

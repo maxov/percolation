@@ -1,10 +1,10 @@
-package net.flayo.percolation.grid;
+package net.flayo.percolation.lattice;
 
 import java.util.Iterator;
 
 /*
     Represents an immutable position on a lattice.
-    Points are generally decoupled from a grid
+    Points are generally decoupled from a lattice
 */
 public class Point implements Iterable<Point> {
 

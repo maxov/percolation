@@ -1,8 +1,8 @@
 package net.flayo.percolation.display.graphic;
 
 import net.flayo.percolation.display.LatticeDisplay;
-import net.flayo.percolation.grid.*;
-import net.flayo.percolation.grid.Point;
+import net.flayo.percolation.lattice.*;
+import net.flayo.percolation.lattice.Point;
 
 import javax.swing.*;
 

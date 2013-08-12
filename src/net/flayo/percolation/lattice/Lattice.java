@@ -1,6 +1,6 @@
-package net.flayo.percolation.grid;
+package net.flayo.percolation.lattice;
 
-import net.flayo.percolation.grid.move.Move;
+import net.flayo.percolation.lattice.move.Move;
 
 import java.util.ArrayList;
 
@@ -14,7 +14,7 @@ public class Lattice {
 
     public Lattice(Point size) {
         this(new Site[size.x][size.y]);
-        // Initialize the whole grid to be 0ff
+        // Initialize the whole lattice to be 0ff
         for (Point point : this.size) {
             set(point, Site.OFF);
         }

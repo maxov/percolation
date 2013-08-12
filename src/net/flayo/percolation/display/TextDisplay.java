@@ -1,7 +1,7 @@
 package net.flayo.percolation.display;
 
-import net.flayo.percolation.grid.Lattice;
-import net.flayo.percolation.grid.Point;
+import net.flayo.percolation.lattice.Lattice;
+import net.flayo.percolation.lattice.Point;
 
 /*
     A simple lattice text display that uses the out stream(useful for debugging).

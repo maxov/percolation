@@ -1,7 +1,7 @@
-package net.flayo.percolation.grid;
+package net.flayo.percolation.lattice;
 
 /*
-    Represents one point on the grid.
+    Represents one point on the lattice.
 */
 public enum Site {
     OFF(0), // Can be off

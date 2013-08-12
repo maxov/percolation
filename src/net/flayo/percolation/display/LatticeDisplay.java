@@ -1,6 +1,6 @@
 package net.flayo.percolation.display;
 
-import net.flayo.percolation.grid.Lattice;
+import net.flayo.percolation.lattice.Lattice;
 
 /*
     Simple interface for displaying lattices.

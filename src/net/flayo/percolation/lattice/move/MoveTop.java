@@ -1,8 +1,7 @@
-package net.flayo.percolation.grid.move;
+package net.flayo.percolation.lattice.move;
 
-import net.flayo.percolation.grid.Lattice;
-import net.flayo.percolation.grid.Point;
-import net.flayo.percolation.grid.move.Move;
+import net.flayo.percolation.lattice.Lattice;
+import net.flayo.percolation.lattice.Point;
 
 /*
     A rule for automatically making top points percolate.

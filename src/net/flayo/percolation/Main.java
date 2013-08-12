@@ -1,16 +1,16 @@
 package net.flayo.percolation;
 
-import net.flayo.percolation.alg.Generator;
+import net.flayo.percolation.gen.Generator;
 import net.flayo.percolation.display.graphic.GraphicDisplay;
 import net.flayo.percolation.display.LatticeDisplay;
-import net.flayo.percolation.grid.move.Move;
-import net.flayo.percolation.grid.Point;
+import net.flayo.percolation.lattice.move.Move;
+import net.flayo.percolation.lattice.Point;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
 /*
-    Problem: Calculate the threshold of percolation on a square grid.
+    Problem: Calculate the threshold of percolation on a square lattice.
     Solution: Use a monte-carlo algorithm to approximate the percolation threshold to a certain degree.
     Accuracy: So far, Consistently +-0.01 of the best calculations for site percolation. A high-accuracy attempt(large
         size, large iterations) has not been tried.
@@ -37,7 +37,7 @@ public class Main {
 
         // Arbitrary number of times can be used
         for (int times = 0; times <= 20; times++) {
-            // A 128x128 grid is used, size generally doesn't matter
+            // A 128x128 lattice is used, size generally doesn't matter
             Generator gen = new Generator(new Point(128, 128));
 
             boolean percolates = false;

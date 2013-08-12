@@ -1,8 +1,8 @@
-package net.flayo.percolation.alg;
+package net.flayo.percolation.gen;
 
-import net.flayo.percolation.grid.Lattice;
-import net.flayo.percolation.grid.Point;
-import net.flayo.percolation.grid.Site;
+import net.flayo.percolation.lattice.Lattice;
+import net.flayo.percolation.lattice.Point;
+import net.flayo.percolation.lattice.Site;
 
 import java.util.Random;
 

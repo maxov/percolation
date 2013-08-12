@@ -1,8 +1,8 @@
-package net.flayo.percolation.grid.move;
+package net.flayo.percolation.lattice.move;
 
-import net.flayo.percolation.grid.Lattice;
-import net.flayo.percolation.grid.Point;
-import net.flayo.percolation.grid.Site;
+import net.flayo.percolation.lattice.Lattice;
+import net.flayo.percolation.lattice.Point;
+import net.flayo.percolation.lattice.Site;
 
 import java.util.ArrayList;
 
@@ -29,7 +29,7 @@ public class Move {
         moves.add(new Move(point.add(new Point(-1, 0)), point));
         moves.add(new Move(point.add(new Point(0, -1)), point));
 
-        // If this point is at the top of the grid, it automatically percolates
+        // If this point is at the top of the lattice, it automatically percolates
         if (point.y == 0) {
             moves.add(new MoveTop(point));
         }
