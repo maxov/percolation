@@ -1,7 +1,7 @@
 # percolation
 
 A simple project to calculate the threshold of percolation on a square grid.
-[Percolation Threshold on Wikipedia](http://en.wikipedia.org/wiki/Percolation_Theory)
+See [Percolation Theory on Wikipedia](http://en.wikipedia.org/wiki/Percolation_tSheory)
 
 ## About
 
